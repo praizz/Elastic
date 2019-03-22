@@ -54,8 +54,8 @@ module.exports = {  //makes it easy to use all the functions
 		  id: _id,
 		  body: payload
 		}, (err, resp) => {
-		  	if(err) return res.json(err);
-			  return res.json(resp);
+		  	if(err) return res.send(err);
+			  return res.send(resp);
 		})
 	},
 

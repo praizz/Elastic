@@ -49,7 +49,15 @@ app.get('/getall/:index/:type/:id', (req,res)=> {
     }
     eslibrary.search(req, res, indexName, docType, payload)
 })
-
+//Update a document by an ID
+app.put('/update/:index/:type/:id', (req,res) => {
+    const index = req.query.index;
+    const docType = req.query.type;
+    var _id = req.params.id;
+    var payload = {"doc": req.body};
+    console.log(payload);
+    eslibrary.updateDoc(req, res, index, _id, docType, payload)
+})
 
 
 app.listen('4000', console.log('app listening on port 4000'));
